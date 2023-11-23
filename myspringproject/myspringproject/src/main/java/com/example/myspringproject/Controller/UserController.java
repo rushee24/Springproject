@@ -40,4 +40,10 @@ public class UserController {
         userService.addUser(user);
         return "redirect:/users"; // Redirect to the user list after adding
     }
+    @GetMapping("/deleteUser/{id}") // deleting the particullar id
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return "redirect:/home"; // Redirect to the user list after deleting
+    }
+
 }
